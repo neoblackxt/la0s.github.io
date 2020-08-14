@@ -16,8 +16,8 @@ excerpt_separator: <!--more-->
 看到data关键字，分析一下流程大致判断是将json Base64之后AES加密，接下来直接断这两个关键地方
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20181223.4.png)
 
-lldb和debugserver配置这里就不多说了，网上博客和两本iOS逆向书都有 
-开一个终端进行两个端口转发：iproxy 2222 22和iproxy 12345 1234  
+lldb和debugserver配置这里就不多说了，网上博客和两本iOS逆向书都有  
+首先开一个终端进行两个端口转发：iproxy 2222 22和iproxy 12345 1234  
 第二个终端输入ssh -p 2222 root@localhost，直接attach上进程：debugserver *:1234 -a "MoneyPlatListedVersion"（ps -A找到进程），为此需要先打开APP  
 第三个终端输入lldb命令连接：process connect connect://localhost:12345  
 image list -o -f | grep MoneyPlatListedVersion 找到ASLR的基地址偏移（这里要注意调试的APP必须和IDA分析的是一致的，这样基地址才能对上,我之前因为换了iPhone6 plus的越狱机，而砸壳分析的文件还是老的5s脱出来的被坑了）
