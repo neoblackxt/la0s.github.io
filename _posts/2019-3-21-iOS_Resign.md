@@ -34,4 +34,4 @@ excerpt_separator: <!--more-->
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20190321.7.png)
 
 参考：  
-[重打包技术](https://www.twblogs.net/a/5d5eb355bd9eee5327fdbdc8/)  
+[iOS重打包技术](https://www.twblogs.net/a/5d5eb355bd9eee5327fdbdc8/)  
