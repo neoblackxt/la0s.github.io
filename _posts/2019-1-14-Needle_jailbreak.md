@@ -5,7 +5,7 @@ key: 20150103
 tags: iOS Reverse
 excerpt_separator: <!--more-->
 ---
-这篇文章虽然叫这题目。但是不只是用到了这Needle一个工具，首先介绍一下Needle这个工具，和Android上的Drozer一样也是iOS安全测试框架，旨在简化对iOS应用程序进行安全评估的整个过程，Needle所涵盖的测试领域的一些示例包括：数据存储，进程间通信，网络通信，静态代码分析，挂钩和二进制保护。里面有很多集成了很多模块能方便的帮我们完成测试工作。<!--more-->  
+这篇题目虽然叫这个。但是不只是用到了这Needle一个工具，首先介绍一下Needle这个工具，和Android上的Drozer一样也是iOS安全测试框架，旨在简化对iOS应用程序进行安全评估的整个过程，Needle所涵盖的测试领域的一些示例包括：数据存储，进程间通信，网络通信，静态代码分析，挂钩和二进制保护。里面有很多集成了很多模块能方便的帮我们完成测试工作。<!--more-->  
 好了介绍到这，今天主要是针对三款有越狱检测的iOS应用，难度由低到高，这里主要用到了dynamic/detection/script_jailbreak-detection-bypass这个模块（此模块需要添加Darwin CC Tools依赖），关于模块的命令用法见Needle的wiki [Modules-Usage](https://github.com/mwrlabs/needle/wiki/Modules-Usage)，这里就不赘述了  
 首先针对第一个APP（v5.1.2）
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20190114.1.png)
@@ -159,6 +159,6 @@ spawn并注入
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20190114.26.png)
 
 emmmm...感兴趣的同学自己研究一下吧。cydia有个屏蔽越狱检测的Liberty Lite插件，上述三个APP都可以用这个tweak绕过，相当🐂pi，可以用cydownload下载.deb对里面的zzzzzLiberty.dylib逆向一下看看究竟是怎么实现屏蔽的。  
-补充一下关于Needle这个框架，bug太多了，而且上次更新还是半年前，作者这是打算都放弃了吗，这里分享一下Needle的两个设置选项，为什么要分享，因为官方wiki没有提供修改的方式，只能本地重新编译仓库源码（之前的objection也是这种方式改的）。一是设置选择进程的时候隐藏iOS自己的APP，二是默认设置APP启动方式是spawn（否则每次都要重新设置），用到了万能的grep命令
+补充一下关于Needle这个框架，bug太多了，而且上次更新还是半年前，作者基本已经不维护了，这里分享一下Needle的两个设置选项，为什么要分享，因为官方wiki没有提供修改的方式，只能本地重新编译仓库源码（之前的objection也是这种方式改的）。一是设置选择进程的时候隐藏iOS自己的APP，二是默认设置APP启动方式是spawn（否则每次都要重新设置），用到了万能的grep命令
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20190114.27.png)
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20190114.28.png)
