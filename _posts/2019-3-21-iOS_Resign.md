@@ -32,3 +32,6 @@ excerpt_separator: <!--more-->
 
 修改指向退出流程的跳转指令CBNZ -> CBZ，再重新打包应用就不会闪退了
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20190321.7.png)
+
+参考：  
+[重打包技术](https://www.twblogs.net/a/5d5eb355bd9eee5327fdbdc8/)  
