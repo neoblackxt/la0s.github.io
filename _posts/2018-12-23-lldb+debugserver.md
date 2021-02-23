@@ -21,9 +21,9 @@ lldb和debugserver配置这里就不多说了，网上博客和两本iOS逆向�
 ~~第二个终端输入ssh -p 2222 root@localhost，直接attach上进程：debugserver *:1234 -a "MoneyPlatListedVersion"（ps -A找到进程），为此需要先打开APP~~  
 ~~第三个终端输入lldb命令连接：process connect connect://localhost:12345~~  
 **更新iOS12以上调试步骤：**  
-- 首先开一个终端进行两个端口转发：iproxy 2222 22和iproxy 1234 1111（将iPhone的1111端口映射到Mac的1234端口）  
-- 第二个终端输入ssh -p 2222 root@localhost，直接attach上进程: cd /usr/bin && ./debugserver 127.0.0.1:1111 -a "MoneyPlatListedVersion"（ps -A找到进程），为此需要先打开APP  
-- 第三个终端输入lldb命令连接：process connect connect://localhost:1234  
+首先开一个终端进行两个端口转发：iproxy 2222 22和iproxy 1234 1111（将iPhone的1111端口映射到Mac的1234端口）  
+第二个终端输入ssh -p 2222 root@localhost，直接attach上进程：cd /usr/bin && ./debugserver 127.0.0.1:1111 -a "MoneyPlatListedVersion"（ps -A找到进程），为此需要先打开APP  
+第三个终端输入lldb命令连接：process connect connect://localhost:1234  
 image list -o -f | grep MoneyPlatListedVersion 找到ASLR的基地址偏移（这里要注意调试的APP必须和IDA分析的是一致的，这样基地址才能对上,我之前因为换了iPhone6 plus的越狱机，而砸壳分析的文件还是老的5s脱出来的被坑了）
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20181223.5.png)
 
