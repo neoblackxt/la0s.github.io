@@ -75,8 +75,8 @@ Interceptor.replace(ptracePtr, new NativeCallback(function(arg1, arg2, arg3, arg
 
 除了hook之外有没有办法在程序运行前把这些反调试的指令patch掉呢，对于sub_100051640函数，我们只需要在运行之前对函数开头patch两条汇编即可，相当于直接return 0了，机器码可利用Keypatch得到
 ```javascript
-MOV X0, #0      //00 00 80 D2   memory write -s 4 0x00000000006b8000+0x100051640 0xD2800000
-RET             //C0 03 5F D6   memory write -s 4 0x00000000006b8000+0x100051640 0xD65F03C0
+MOV X0, #0      //00 00 80 D2   memory write -s 4 0x0000000000084000+0x100051640 0xD2800000
+RET             //C0 03 5F D6   memory write -s 4 0x0000000000084000+0x100051644 0xD65F03C0
 ```
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20190307.8.png)
 
