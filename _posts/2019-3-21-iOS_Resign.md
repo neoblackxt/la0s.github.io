@@ -5,7 +5,8 @@ key: 20150103
 tags: iOS Reverse
 excerpt_separator: <!--more-->
 ---
-还是上篇文章里那个有反调试的APP（v6.0.5），我们这里来试一下静态patch的方法，也就是重打包的方法。一般来说iOS重打包有两种方法：**第一种方法：**直接使用Cydia Impactor使用开发者签名安装即可，这种情况下不会修改APP的BundleID（推荐）<!--more-->
+还是上篇文章里那个有反调试的APP（v6.0.5），我们这里来试一下静态patch的方法，也就是重打包的方法。一般来说iOS重打包有两种方法：~~**第一种方法：**直接使用Cydia Impactor使用开发者签名安装即可，这种情况下不会修改APP的BundleID（推荐）~~  
+因为苹果调整了自签策略，现在Cydia Impactor已经不能用了，大胡子也不维护了:( 所以笔者这里推荐使用MonkeyDev来重新签名，新建一个MonkeyApp项目，并且将Build Settings的MONKEYDEV_DEFAULT_BUNDLEID修改为YES，这种方式不会修改APP的BundleID（推荐）<!--more-->
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20190321.1.png)
 
 **第二种方法：**先使用iOS App Signer手动签名
