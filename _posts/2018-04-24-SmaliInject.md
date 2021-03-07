@@ -13,32 +13,31 @@ excerpt_separator: <!--more-->
 <!--more-->
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20180424.1.png)
 
-反编译后的目录：
+反编译后的目录
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20180424.9.png)
 
 将Inject.py放入要注入的smali文件目录，会自动给当前目录和子集目录smali文件进行注入
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20180424.2.png)
 
 Inject.py：  
-这里需要python版本为3.3以上，因为会牵扯到脚本中某些函数的版本问题。  
-执行这个脚本：
+这里需要python版本为3.3以上（因为会牵扯到脚本中某些函数的版本问题），执行这个脚本
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20180424.3.png)
 
-可以看到已经注入完毕，打开smali文件验证一下：
+可以看到已经注入完毕，打开smali文件验证一下
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20180424.4.png)
 
-接下来将InjectLog.smali文件放入里面，注意目录：
+接下来将InjectLog.smali文件放入里面，注意目录
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20180424.5.png)
 
 重新打包 java -jar apktool_2.2.3.jar b out -o unsigned.apk，然后使用ApkToolkit工具进行签名即可：  
-用Jeb打开patch过的apk,所有的函数都已经被注入了代码:
+用Jeb打开patch过的apk,所有的函数都已经被注入了代码
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20180424.6.png)
 
-打开SDK工具下的ddms,在手机运行应用，过滤Tag为InjectLog：
+打开SDK工具下的ddms,在手机运行应用，过滤Tag为InjectLog
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20180424.8.png)
 
-打印日志输出的顺序就是smali文件（APK应用）的执行顺序！
+打印日志输出的顺序就是smali文件（APK应用）的执行顺序
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20180424.7.png)
 
-后期可以再配合AS的动态调试。  
+后期可以再配合AS的动态调试，可以帮助梳理局部函数的逻辑  
 **说在最后的话**，弊端就是需要重打包，在今天这个APP防护原来越严的时代，此方法基本已经过时了，只能应对一些小型APP，因此有一定的局限性。
