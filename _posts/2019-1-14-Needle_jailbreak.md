@@ -5,8 +5,8 @@ key: 20150103
 tags: iOS Reverse
 excerpt_separator: <!--more-->
 ---
-这篇题目虽然叫这个。但是不只是用到了这Needle一个工具，首先介绍一下Needle这个工具，和Android上的Drozer一样也是iOS安全测试框架，旨在简化对iOS应用程序进行安全评估的整个过程，Needle所涵盖的测试领域的一些示例包括：数据存储，进程间通信，网络通信，静态代码分析，挂钩和二进制保护。里面有很多集成了很多模块能方便的帮我们完成测试工作。<!--more-->  
-好了介绍到这，今天主要是针对三款有越狱检测的iOS应用，难度由低到高，这里主要用到了dynamic/detection/script_jailbreak-detection-bypass这个模块（此模块需要添加Darwin CC Tools依赖），关于模块的命令用法见Needle的wiki [Modules-Usage](https://github.com/mwrlabs/needle/wiki/Modules-Usage)，这里就不赘述了  
+首先介绍一下Needle这个工具，和Android上的Drozer一样也是iOS安全测试框架，旨在简化对iOS应用程序进行安全评估的整个过程，Needle所涵盖的测试领域的一些示例包括：数据存储，进程间通信，网络通信，静态代码分析，挂钩和二进制保护（复制而来）。里面有很多集成了很多模块能方便的帮我们完成测试工作。<!--more-->  
+好了介绍到这，本文主要是针对三款有越狱检测的iOS应用，难度由低到高，这里主要用到了dynamic/detection/script_jailbreak-detection-bypass这个模块（此模块需要添加Darwin CC Tools依赖），关于模块的命令用法见Needle的wiki [Modules-Usage](https://github.com/mwrlabs/needle/wiki/Modules-Usage)，这里就不赘述了  
 首先针对第一个APP（v5.1.2）
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20190114.1.png)
 
