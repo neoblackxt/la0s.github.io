@@ -1,1 +1,1 @@
-https://weibo.com/La0s
+https://la0s.github.io/
