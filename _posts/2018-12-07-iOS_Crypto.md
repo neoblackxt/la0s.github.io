@@ -103,7 +103,7 @@ enum {
 	kCCDecrypt = 1	
 };
 ```
-CCAlgorithm: 0x0指加密方式是kCCAlgorithmAES128  
+CCAlgorithm: 0x0指加密方式是AES加密，0x1指DES加密，0x2指3DES加密  
 ```python
 enum {
 	kCCAlgorithmAES128 = 0,
