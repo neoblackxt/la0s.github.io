@@ -118,7 +118,7 @@ CCOptions: 0x1指模式是cbc，
 ```python
 enum {
 	kCCOptionPKCS7Padding	= 0x0001,
-	kCCOptionECBMode		= 0x0002
+	kCCOptionECBMode	= 0x0002
 };
 ```
 具体参阅[CommonCryptor.h](https://opensource.apple.com/source/CommonCrypto/CommonCrypto-36064/CommonCrypto/CommonCryptor.h)各参数意义，key=DATA_KEY20150116和iv=20150116和Android客户端是一致的，而且由于Android是在so库生成的AES加密，避免了Android端java层hook不到的情况。
