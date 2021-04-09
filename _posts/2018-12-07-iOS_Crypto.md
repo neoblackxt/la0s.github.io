@@ -96,7 +96,32 @@ Interceptor.attach(Module.findExportByName('libcommonCrypto.dylib', 'CCCrypt'), 
 直接使用 frida -U -f com.Dongfangjinke.dongfanghui -l CC_hook.js --no-pause
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20181207.4.png)
 
-operation: 0x0代表加密，0x1代表解密，CCAlgorithm: 0x0指加密方式是kCCAlgorithmAES128，CCOptions: 0x1指模式是cbc，具体参阅CommonCryptor.h各参数意义，key=DATA_KEY20150116和iv=20150116和Android客户端是一致的，而且由于Android是在so库生成的AES加密，避免了Android端java层hook不到的情况。
+operation: 0x0代表加密，0x1代表解密  
+```python
+enum {
+	kCCEncrypt = 0,	
+	kCCDecrypt = 1	
+};
+```
+CCAlgorithm: 0x0指加密方式是kCCAlgorithmAES128  
+```python
+enum {
+	kCCAlgorithmAES128 = 0,
+	kCCAlgorithmDES    = 1,
+	kCCAlgorithm3DES   = 2,		
+	kCCAlgorithmCAST   = 3,		
+	kCCAlgorithmRC4    = 4,
+	kCCAlgorithmRC2	   = 5	
+};
+```
+CCOptions: 0x1指模式是cbc，
+```python
+enum {
+	kCCOptionPKCS7Padding	= 0x0001,
+	kCCOptionECBMode		= 0x0002
+};
+```
+具体参阅[CommonCryptor.h](https://opensource.apple.com/source/CommonCrypto/CommonCrypto-36064/CommonCrypto/CommonCryptor.h)各参数意义，key=DATA_KEY20150116和iv=20150116和Android客户端是一致的，而且由于Android是在so库生成的AES加密，避免了Android端java层hook不到的情况。
 
 参考  
 [appmon project提供的scripts](https://github.com/dpnishant/appmon/tree/master/scripts/iOS/Crypto)   
