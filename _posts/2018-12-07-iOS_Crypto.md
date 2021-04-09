@@ -107,6 +107,7 @@ CCAlgorithm: 0x0指加密方式是kCCAlgorithmAES128
 ```python
 enum {
 	kCCAlgorithmAES128 = 0,
+	kCCAlgorithmAES    = 0,
 	kCCAlgorithmDES    = 1,
 	kCCAlgorithm3DES   = 2,		
 	kCCAlgorithmCAST   = 3,		
@@ -114,11 +115,29 @@ enum {
 	kCCAlgorithmRC2	   = 5	
 };
 ```
-CCOptions: 0x1指模式是cbc，
+CCOptions: 0x1指模式是CBC，通常0x3指ECB
 ```python
 enum {
 	kCCOptionPKCS7Padding	= 0x0001,
 	kCCOptionECBMode	= 0x0002
+};
+```
+size_t keyLength，指密钥位数（真正决定密钥长度的地方）。AES数据块长度为128位，所以IV长度需要为16个字符（ECB模式不用IV），密钥根据指定密钥位数分别为16、24、32个字符，IV与密钥超过长度则截取，不足则在末尾填充'\0'补足
+```python
+enum {
+    kCCKeySizeAES128          = 16,
+    kCCKeySizeAES192          = 24,
+    kCCKeySizeAES256          = 32,
+    kCCKeySizeDES             = 8,
+    kCCKeySize3DES            = 24,
+    kCCKeySizeMinCAST         = 5,
+    kCCKeySizeMaxCAST         = 16,
+    kCCKeySizeMinRC4          = 1,
+    kCCKeySizeMaxRC4          = 512,
+    kCCKeySizeMinRC2          = 1,
+    kCCKeySizeMaxRC2          = 128,
+    kCCKeySizeMinBlowfish     = 8,
+    kCCKeySizeMaxBlowfish     = 56,
 };
 ```
 具体参阅[CommonCryptor.h](https://opensource.apple.com/source/CommonCrypto/CommonCrypto-36064/CommonCrypto/CommonCryptor.h)各参数意义，key=DATA_KEY20150116和iv=20150116和Android客户端是一致的，而且由于Android是在so库生成的AES加密，避免了Android端java层hook不到的情况。
