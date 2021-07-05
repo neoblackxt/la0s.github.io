@@ -143,7 +143,7 @@ enum {
 具体参阅[CommonCryptor.h](https://opensource.apple.com/source/CommonCrypto/CommonCrypto-36064/CommonCrypto/CommonCryptor.h)各参数意义，key=DATA_KEY20150116和iv=20150116和Android客户端是一致的，而且由于Android是在so库生成的AES加密，避免了Android端java层hook不到的情况。  
 
 ***
-**2021.6更新** 对上述脚本进行优化，增加了Base64转化过程，方便查找和过滤。当KEY与IV不是明文时，以Hex形式打印，并对原始的CCCrypt函数参数进行翻译。脚本放在了仓库里[CC_Hook_2Base64.js](https://github.com/la0s/Frida-scripts/blob/main/CC_Hook_2Base64.js)  
+**2021.6更新：**对上述脚本进行优化，增加了Base64转化过程，方便查找和过滤。当KEY与IV不是明文时，以Hex形式打印，并对原始的CCCrypt函数参数进行翻译。脚本放在了仓库里[CC_Hook_2Base64.js](https://github.com/la0s/Frida-scripts/blob/main/CC_Hook_2Base64.js)  
 ![](https://raw.githubusercontent.com/la0s/Frida-scripts/main/Images/CC_Hook_2Base64.png)  
 
 参考  
