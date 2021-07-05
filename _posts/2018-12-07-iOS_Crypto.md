@@ -140,7 +140,10 @@ enum {
     kCCKeySizeMaxBlowfish     = 56,
 };
 ```
-具体参阅[CommonCryptor.h](https://opensource.apple.com/source/CommonCrypto/CommonCrypto-36064/CommonCrypto/CommonCryptor.h)各参数意义，key=DATA_KEY20150116和iv=20150116和Android客户端是一致的，而且由于Android是在so库生成的AES加密，避免了Android端java层hook不到的情况。
+具体参阅[CommonCryptor.h](https://opensource.apple.com/source/CommonCrypto/CommonCrypto-36064/CommonCrypto/CommonCryptor.h)各参数意义，key=DATA_KEY20150116和iv=20150116和Android客户端是一致的，而且由于Android是在so库生成的AES加密，避免了Android端java层hook不到的情况。  
+***
+更新：对上述脚本进行优化，增加了Base64转化过程，方便查找和过滤。
+[CC_Hook_2Base64.js](https://raw.githubusercontent.com/la0s/Frida-scripts/main/Images/CC_Hook_2Base64.png)  
 
 参考  
 [appmon project提供的scripts](https://github.com/dpnishant/appmon/tree/master/scripts/iOS/Crypto)   
