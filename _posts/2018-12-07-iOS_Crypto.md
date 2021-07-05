@@ -144,7 +144,7 @@ enum {
 
 ***
 **2021.6更新：** 对上述脚本进行优化，增加了Base64转化过程，方便查找和过滤。当KEY与IV不是明文时，以Hex形式打印，并对原始的CCCrypt函数参数进行翻译。脚本放在了仓库里 [CC_Hook_2Base64.js](https://github.com/la0s/Frida-scripts/blob/main/CC_Hook_2Base64.js)  
-![](https://raw.githubusercontent.com/la0s/Frida-scripts/main/Images/CC_Hook_2Base64.png)  
+![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20181207.5.png) 
 
 参考  
 [appmon project提供的scripts](https://github.com/dpnishant/appmon/tree/master/scripts/iOS/Crypto)   
