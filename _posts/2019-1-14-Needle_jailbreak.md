@@ -26,7 +26,7 @@ excerpt_separator: <!--more-->
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20190114.6.png)
 
 ~~Mac上的IDA7.0搜不出来中文字符（其实在string段里是显示中文的），原因是无法显示_ustring段的字符串，而Windows上是可以的。~~  
-中文字符串是存在于**__ustring**段的，建议在IDA的字符串设置里勾选上Unicode类型，就可以正常搜出来了。
+中文字符串是存在于**__ustring段**的，建议在IDA的字符串设置里勾选上Unicode类型，就可以正常搜出来了。
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20190114.29.png)
 使用Needle的dynamic/detection/script_jailbreak-detection-bypass模块无法绕过，由于在Strings窗口无法显示中文字符串，直接在__cfstring段搜索越狱关键词，找到调用函数
 -[AppDelegate application:didFinishLaunchingWithOptions:]
