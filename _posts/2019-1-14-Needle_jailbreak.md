@@ -160,7 +160,7 @@ spawn并注入
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20190114.25.png)
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20190114.26.png)
 
-emmmm...感兴趣的同学自己研究一下吧。cydia有个屏蔽越狱检测的Liberty Lite插件，上述三个APP都可以用这个tweak绕过，相当🐂pi，可以用cydownload下载.deb对里面的zzzzzLiberty.dylib逆向一下看看究竟是怎么实现屏蔽的。  
-补充一下关于Needle这个框架，bug太多了，而且上次更新还是半年前，作者基本已经不维护了，这里分享一下Needle的两个设置选项，为什么要分享，因为官方wiki没有提供修改的方式，只能本地重新编译仓库源码（之前的objection也是这种方式改的）。一是设置选择进程的时候隐藏iOS自己的APP，二是默认设置APP启动方式是spawn（否则每次都要重新设置），用到了万能的grep命令
+感兴趣的同学可以自己研究一下。cydia有个屏蔽越狱检测的Liberty Lite插件，上述三个APP都可以用这个tweak绕过，可以用cydownload下载.deb对里面的zzzzzLiberty.dylib逆向一下看看究竟是怎么实现屏蔽的。  
+补充一下关于Needle这个框架，bug太多了，而且上次更新还是半年前，作者基本已经不维护了，这里分享一下Needle的两个设置选项，为什么要分享，因为官方wiki没有提供修改的方式，只能本地重新编译仓库源码（之前的objection也是这种方式改的）。一是设置选择进程的时候隐藏iOS自己的APP，二是默认设置APP启动方式是spawn（否则每次都要重新设置），用到了万能的grep命令。
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20190114.27.png)
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20190114.28.png)
