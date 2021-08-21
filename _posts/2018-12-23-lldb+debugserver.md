@@ -62,6 +62,9 @@ CCCryptorStatus CCCrypt(
 
 综上lldb调试还是非常方便的，和hook相比不用在意那么多参数类型，但是与frida的-f参数相比缺点也很明显，如果程序有反调试检测就得绕过了。
 
+***
+**2021.8更新：** 在iOS动态调试强烈推荐使用voltron这个工具，可以打造媲美IDA的调试界面。
+
 参考  
 [lldb使用方法(学习笔记)](https://bbs.pediy.com/thread-212731.htm)  
 [实战：干掉高德地图7.2.0版iOS客户端的反动态调试保护](http://www.iosre.com/t/7-2-0-ios/770)  
