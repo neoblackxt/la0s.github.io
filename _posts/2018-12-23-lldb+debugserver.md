@@ -63,7 +63,7 @@ CCCryptorStatus CCCrypt(
 综上lldb调试还是非常方便的，和hook相比不用在意那么多参数类型，但是与frida的-f参数相比缺点也很明显，如果程序有反调试检测就得绕过了。
 
 ***
-**2021.8更新：** 在iOS动态调试强烈推荐使用voltron这个工具，可以打造媲美IDA的调试界面。我一般开command、registers、disasm、memory这四个窗口，调试过程中对于寄存器的变化和内存读写的监控操作都会以高亮显示，这个是特别方便的！
+**2021.8更新：** 在iOS动态调试强烈推荐使用[voltron](https://github.com/snare/voltron)这个工具，可以打造媲美IDA的调试界面。我一般开command、registers、disasm、memory这四个窗口，调试过程中对于寄存器的变化和内存读写的监控操作都会以高亮显示，极大改善了lldb的调试体验。
 ![](https://raw.githubusercontent.com/la0s/la0s.github.io/master/screenshots/20181223.12.png)
 
 参考  
