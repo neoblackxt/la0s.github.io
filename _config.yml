@@ -412,9 +412,10 @@ gitalk:
   clientID: 8e48c78ba4be14211d30
   clientSecret: d31ebc66de799fb0fd1608e5746f77d937f5632a
   repo: la0s.github.io
+  proxy: https://cors-server-ecru.vercel.app/github_access_token
   owner: la0s
   admin: la0s
-  proxy: https://cors-server-ecru.vercel.app/github_access_token
+  
   
 
 # Baidu Share
