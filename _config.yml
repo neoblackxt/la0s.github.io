@@ -414,6 +414,8 @@ gitalk:
   repo: la0s.github.io
   owner: la0s
   admin: la0s
+  proxy: https://cors-server-ecru.vercel.app/github_access_token
+  
 
 # Baidu Share
 # Available value:
